@@ -25,7 +25,7 @@ public final class DecupleHP extends JavaPlugin implements Listener
 	@EventHandler
 	public void creatureSpawnEvent(CreatureSpawnEvent e)
 	{
-		getServer().broadcastMessage((e.getEntity().getHealth()*10) + "  " + e.getEntity().getName());
+		//getServer().broadcastMessage((e.getEntity().getHealth()*10) + "  " + e.getEntity().getName());
 
 		e.getEntity().setMaxHealth(e.getEntity().getHealth()*10);
 		e.getEntity().setHealth(e.getEntity().getHealth()*10);
@@ -34,7 +34,7 @@ public final class DecupleHP extends JavaPlugin implements Listener
 	public void onDamage(EntityDamageByEntityEvent e)
 	{
 		e.getDamager().sendMessage(
-				String.format("%s%s%s에게 %s%f%s데미지를 주었습니다 [ 남은 채력 %f ]",
+				String.format("%s%s%s에게 %s%.2f%s데미지를 주었습니다 [ 남은 채력 %.2f ]",
 				ChatColor.GOLD, e.getEntity().getName(), ChatColor.WHITE, ChatColor.GOLD, e.getDamage(), ChatColor.WHITE, ((LivingEntity)e.getEntity()).getHealth())
 		);
 	}
