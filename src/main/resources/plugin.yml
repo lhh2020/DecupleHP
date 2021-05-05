@@ -1,0 +1,4 @@
+name: DecupleHP
+version: @version@
+main: jsh.type.a.decuplehp.DecupleHP
+api-version: 1.16
