@@ -2,6 +2,7 @@ package jsh.type.a.decuplehp;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -26,7 +27,10 @@ public final class DecupleHP extends JavaPlugin implements Listener
 	public void creatureSpawnEvent(CreatureSpawnEvent e)
 	{
 		//getServer().broadcastMessage((e.getEntity().getHealth()*10) + "  " + e.getEntity().getName());
-
+		if(e.getEntity() instanceof Player)
+		{
+			return;
+		}
 		e.getEntity().setMaxHealth(e.getEntity().getHealth()*10);
 		e.getEntity().setHealth(e.getEntity().getHealth()*10);
 	}
